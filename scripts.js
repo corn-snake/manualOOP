@@ -15,7 +15,7 @@ function checkGet(thing) {
         console.log(`duplicate event; tried to re-fetch fragment ${thing}`);
     } else {
         while (document.querySelector('.curr')) document.querySelector('.curr').classList.remove('curr');
-        fetch("frags/" + thing + ".html").then(t=>t.text()).then(h=>{
+        fetch("/manualOOP/frags/" + thing + ".html").then(t=>t.text()).then(h=>{
             document.querySelector('#hellspawner').innerHTML = h;
             document.querySelector('article').replaceChild(document.querySelector('#hellspawner').childNodes[0], document.querySelector('article').childNodes[0]);
         });
