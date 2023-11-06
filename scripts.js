@@ -22,9 +22,6 @@ function checkGet(thing) {
         window.localStorage.setItem('curr', thing);
         thing !== "inheritance" ? document.getElementById(thing + "clicker").classList.add('curr') : document.getElementById('inherMother').classList.add('curr'); 
     }
-    if (screen.width <= 600 && window.localStorage.getItem('side') != 1) {
-        document.querySelector('nav i.mdi-menu').dispatchEvent(new Event('click'));
-    }
 }
 function toggleAside(boo) {
     if (boo) {
@@ -39,6 +36,11 @@ function toggleAside(boo) {
         window.localStorage.setItem('side', 1);
     }
 }
+function inscrToggler () {
+    if (screen.width <= 600) {
+        toggleAside(0);
+    }
+}
 let intLists = [...document.querySelectorAll('li:not(.mother) span')];
 while (intLists.length >= 1) {
     intLists.shift().addEventListener('click', (ex)=>{
@@ -48,6 +50,7 @@ while (intLists.length >= 1) {
 const fullArrNav = ["intro", "memory", "types", "funcs", "obj", "getset", "abstract", "monad", "class", "constructor", "inheritance"];
 document.getElementById('backone').addEventListener('click',()=>{
     if (window.localStorage.getItem('curr') != "intro") {checkGet(fullArrNav[fullArrNav.indexOf(window.localStorage.getItem('curr')) - 1])}
+    inscrToggler();
 });
 document.getElementById('forwardone').addEventListener('click', () => {
     if (window.localStorage.getItem('curr') != "inheritance") { checkGet(fullArrNav[fullArrNav.indexOf(window.localStorage.getItem('curr')) + 1]) }
