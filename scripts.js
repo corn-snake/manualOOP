@@ -22,7 +22,7 @@ function checkGet(thing) {
         window.localStorage.setItem('curr', thing);
         thing !== "inheritance" ? document.getElementById(thing + "clicker").classList.add('curr') : document.getElementById('inherMother').classList.add('curr'); 
     }
-    if (screen.width <= 600) {
+    if (screen.width <= 600 && window.localStorage.getItem('side') != 1) {
         document.querySelector('nav i.mdi-menu').dispatchEvent(new Event('click'));
     }
 }
