@@ -178,4 +178,7 @@ code.inlinecode {
         transform: translateX(calc(25vw + 3em - 16px));
         transition: transform .25s ease-in, width .25s ease-in;
     }
+    aside i.mdi-menu {
+        display: none;
+    }
 }
