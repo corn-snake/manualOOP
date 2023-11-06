@@ -45,12 +45,12 @@ let intLists = [...document.querySelectorAll('li:not(.mother) span')];
 while (intLists.length >= 1) {
     intLists.shift().addEventListener('click', (ex)=>{
         checkGet(ex.target.getAttribute('id').substring(0,ex.target.getAttribute('id').indexOf('clicker')));
+        inscrToggler();
     });
 }
 const fullArrNav = ["intro", "memory", "types", "funcs", "obj", "getset", "abstract", "monad", "class", "constructor", "inheritance"];
 document.getElementById('backone').addEventListener('click',()=>{
     if (window.localStorage.getItem('curr') != "intro") {checkGet(fullArrNav[fullArrNav.indexOf(window.localStorage.getItem('curr')) - 1])}
-    inscrToggler();
 });
 document.getElementById('forwardone').addEventListener('click', () => {
     if (window.localStorage.getItem('curr') != "inheritance") { checkGet(fullArrNav[fullArrNav.indexOf(window.localStorage.getItem('curr')) + 1]) }
