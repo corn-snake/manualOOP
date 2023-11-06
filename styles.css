@@ -153,6 +153,7 @@ code {
     width: 100%;
     display: block;
     border-radius: 15px;
+    overflow-x: scroll;
 }
 code.inlinecode {
     display: inline-block;
