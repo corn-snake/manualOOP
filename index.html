@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Manual OOP</title>
+        <link rel="stylesheet" href="styles.css"/>
+        <link rel="shortcut icon" href="frags/favicon.ico" type="image/x-icon">
+    </head>
+    <body onload="window.scrollTo(0, window.localStorage.getItem('top')||0)">
+        <main class="inactive">
+            <header>
+                <i class="mdi-menu" onmouseenter="this.classList.add('hover')" onmouseleave="this.classList.remove('hover')" onclick="document.querySelector('aside').classList.contains('inside') ? toggleAside(true) : toggleAside(false)"></i><h3 style="padding-left: 2em;">Programación Orientada-a-Objetos</h3>
+                <ruby><b>O</b>bject-<b>O</b>riented&nbsp;<b>P</b>rogramming</ruby>
+            </header>
+            <article>
+                <div></div>
+            </article>
+            <nav style="text-align: center;bottom: 0;">
+                <span id="backone">⟵</span>&nbsp;∺&nbsp;<span id="forwardone">⟶</span>
+            </nav>
+        </main>
+        <footer class="inactive">
+            <span>&mdash;&MediumSpace;Por:&nbsp;<i>Luis Eduardo Pimentel Aguilar</i>&MediumSpace;&mdash;</span>
+        </footer>
+        <aside class="inside">
+            <nav>
+                <ol>
+                    <li><span id="introclicker" class="curr">Intro</span></li>
+                    <li><span class="mother">Valores y variables</span><ol nesting="1">
+                        <li><span id="memoryclicker">Asignando memoria</span></li>
+                        <li><span id="typesclicker">Tipos de variables</span></li>
+                    </ol></li>
+                    <li><span id="funcsclicker">Funciones</span></li>
+                    <li><span class="mother">Objetos</span><ol nesting="1">
+                        <li><span id="objclicker">¿Qué es un <i>objeto</i>?</span></li>
+                        <li><span id="getsetclicker">Lectores y escritores</span></li>
+                        <li><span id="abstractclicker">Abstracción y encapsulación</span></li>
+                    </ol></li>
+                    <li><span id="monadclicker">Mónadas</span></li>
+                    <li><span class="mother">Clases</span><ol nesting="1">
+                        <li><span id="classclicker">Plantillando objetos</span></li>
+                        <li><span id="constructorclicker">Constructores</span></li>   
+                        <li class="poss" id="inherMother"><span id="inheritanceclickerp1">Herencia, generalización &</span><wbr/><span id="inheritanceclickerp2">polimorfismo</span></li>
+                    </ol></li>
+                </ol>
+            </nav>
+        </aside>
+        <div id="hellspawner"></div>
+        <script src="/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<div id="monad">
+    A pesar de ser un concepto principalmente usado en el paradigma funcional, las m&oacute;nadas resultan muy &uacute;tiles para reducir la cantidad de c&oacute;digo que tendremos que escribir para una serie de modificaciones en un mismo objeto.
+    <br/>
+    Al operar dentro de un objeto, podemos utilizar la palabra&nbsp;<code class="inlinecode">this</code>&nbsp;para referenciar el objeto mismo m&aacute;s inmediato:
+    <blockquote><code>
+        miObjeto = {<blockquote>
+            private:<blockquote>
+                valUno = 4</blockquote>
+            public: <blockquote>
+                cambiarValUno = function (delta) {<blockquote>
+                    valUno += delta;<br/>
+                    return this;</blockquote>
+                }</blockquote></blockquote>
+        }<br/>
+        miObjeto.cambiarValUno(2);&nbsp;<span style="color:rgb(255, 0, 106)">// miObjeto.valUno va a ser igual a 6</span><br/>
+        copiaMiObjeto = miObjeto.cambiarValUno(4);&nbsp;<span style="color:rgb(255, 0, 106)">// copiaMiObjeto.valUno & miObjeto.valUno van a ser iguales a 10</span><br/>
+        copiaMiObjeto.cambiarValUno(9);&nbsp;<span style="color:rgb(255, 0, 106)">// copiaMiObjeto.valUno va a ser igual a 19, pero miObjeto.valUno se mantiene en 10</span><br/>
+    </code></blockquote>
+    Al producir el mismo objeto, todos los operadores que se le apliquen a la instrucci&oacute;n, as&iacute; como las funciones a las que se les pase, van a tratar con el objeto entero, no solo con una propiedad o un valor nulo. Siendo que los operadores punto-propiedad y puntero-propiedad&nbsp;<wbr/><span style="white-space: nowrap;">(<code class="inlinecode">obj<span style="color:aqua">.</span>propOmet</code>&nbsp;y&nbsp;<code class="inlinecode">obj<span style="color:aqua">-></span>propOmet</code>)</span>&nbsp;<wbr/>son, justamente,&nbsp;<i>operadores</i>, podemos concatenarlos tal que:
+    <blockquote><code>
+        miObjeto.cambiarValUno(3).cambiarValUno(-2).cambiarValUno(7).cambiarValUno(92);&nbsp;<span style="color:rgb(255, 0, 106)">// miObjeto.valUno, si lo declaramos como 4, acabar&aacute; como 104</span>
+    </code></blockquote>
+    En el paradigma funcional, las m&oacute;nadas toman todav&iacute;a m&aacute;s protagonismo y expansi&oacute;n, siendo que podr&iacute;amos declarar un flujo de datos completo en tan s&oacute;lo unas l&iacute;neas con valores que no necesariamente son objetos; Haskell hace&nbsp;<a href="https://www.schoolofhaskell.com/user/XookDo/introduccion-a-la-programacion-funcional/parte-7/tutorial">amplio uso de tales</a>.
+</div>

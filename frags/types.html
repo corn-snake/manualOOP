@@ -1,0 +1,28 @@
+<div id="types">
+    A&uacute;n as&iacute;, nos es &uacute;til abstraer esto para guiar nuestra l&oacute;gica y evitar errores.<br/>
+    En general, existen dos tipos de valores esenciales:
+    <ol>
+        <li><span><b><u>L&oacute;gicos</u></b>&nbsp;&mdash;&nbsp;</span>Verdadero o Falso, S&iacute; o No, 1 o 0</li>
+        <li><span><b><u>N&uacute;meros</u></b>&nbsp;&mdash;&nbsp;</span>Dependiendo de la arquitectura (y el registro), cualquier cifra positiva (&gt;=0) que se pueda representar con 8, 16, 32 o 64 bits</li>
+    </ol>
+    Esta lista tiende a expandirse de manera que podamos leer datos un tanto menos mec&aacute;nicos:
+    <ol start="3">
+        <li><span><b><u>Car&aacute;cteres</u></b>&nbsp;&mdash;&nbsp;</span>Letras individuales; originalmente solo &Tilde;128, con el desarrollo del estandar UNiCODE ahora son m&aacute;s de un millón, todos cabiendo en un n&uacute;mero de tan solo 16 bits.</li>
+        <li><span><b><u>N&uacute;meros &quot;signados&quot;</u></b>&nbsp;&mdash;&nbsp;</span>N&uacute;meros cuyo primer bit de derecha a izquierda determina su signo; si tu compu es de 32 bits, el n&numero; m&aacute;ximo de esta categor&iacute; que puede procesar en un solo paso es 111,1111,1111,1111,1111,1111 &mdash; &plusmn;2147483647</li>
+        <li><span><b><u>N&uacute;meros largos</u></b>&nbsp;&mdash;&nbsp;</span>que usan dos registros para un valor. Pueden ser signados (equipo de 32b -> n&uacute;mero de de 63b), y en ciertos lenguajes se puede usar un &quot;n&uacute;mero largo-largo,&quot; que duplica el n&uacute;mero de bits &uacute;tiles del n. largo regular.</li>
+        <li><span><b><u>N&uacute;meros de punto flotante</u></b>&nbsp;&mdash;&nbsp;</span>son n&uacute;meros signados cuya primera secci&oacute;an (8b para la precisi&oacute;n regular, 11b para la especificaci&oacute;n &quot;double&quot;/64b) se usa como exponente, y el resto como componente num&eacute;rico. Se procesan mediante una&nbsp;<a href="https://es.wikipedia.org/wiki/Formato_en_coma_flotante_de_doble_precisi%C3%B3n">f&oacute;rmula bastante compleja</a>, y son m&aacute;s para aproximaciones que para aritm&eacute;tica exacta.</li>
+    </ol>
+    Todos estos juntos son valores &quot;primitivos,&quot; as&iacute; llamados por ser los m&aacute;s simples, c&oacute;mo las c&eacute;lulas de un ser.
+    <br/><br/>
+    A partir de estos, existen tipos &quot;complejos&quot;:
+    <ul>
+        <li><span><b><u>Listas</u></b>&nbsp;&mdash;&nbsp;</span>Colecciones de datos del mismo tipo, cuya longitud es fija.<ul>
+            <li><span><b><u>Matrices</u></b>&nbsp;&mdash;&nbsp;</span>Colecciones cuyos elementos son subsecuentes.</li>
+            <li><span><b><u>Listas enlazadas</u></b>&nbsp;&mdash;&nbsp;</span>Colecci&oacute;nes donde cada dato tambi&eacute;n contiene un espacio subsecuente, que apunta a la direcci&oacute;n del siguiente elemento.</li>
+            <li><span><b><u>Lista enumerada</u></b>&nbsp;&mdash;&nbsp;</span>Colecci&oacute;nes cuyos valores de sus datos no se pueden re-escribir una vez inicializados.</li>
+        </li></ul>
+        <li><span><b><u>Vectores</u></b>&nbsp;&mdash;&nbsp;</span>Colecciones cuyo tamaño (pero no tipo) es din&aacute;mico; por lo mismo, tienden a ser enlazados</li>
+        <li><span><b><u>Mapas</u></b>&nbsp;&mdash;&nbsp;</span>Colecciones que, en vez de contar elementos de uno en uno, les asigna una <i>clave</i>; en esencia, es una variable que contiene variables</li>
+    </ul>
+    Estas &uacute;ltimas son, en esencia, el tipo m&aacute;s simple de&nbsp;<i><b><u>objetos</u></b></i>&nbsp;que podemos tener.
+</div>

@@ -1,0 +1,35 @@
+<div id="obj">
+    Como ya mencionamos, un&nbsp;<i>mapa</i> es la forma m&aacute;s simple de objeto. Pero, ¿qu&eacute; es exactamente un objeto?<br/><br/>
+    Pensemos en como describimos un libro: c&oacute;mo es su portada, cu&aacute;ntas hojas tiene, su autor&iacute;a, precio, n&uacute;mero ISBN, y un largo etc&eacute;tera.<br/>
+    Cada una de estas se puede considerar como una&nbsp;<i>propiedad</i>, que podemos representar en forma de lista:
+    <blockquote><code>
+        libro = {<blockquote>
+            portada = {<blockquote>
+                color = azul,<br/>
+                tipo = pasta dura,<br/>
+                bestseller = s&iacute;</blockquote>
+            },<br/>
+            nombre = The Water Dancer,<br/>
+            autor&iacute;a = Ta-Nehisi Coates,<br/>
+            ...</blockquote>
+        }
+    </code></blockquote>
+    Como podemos observar, cada propiedad tiene un nombre y un valor, como una variable &mdash; son un par clave-valor.<br/>
+    Lo interesante de los objetos es que tambi&eacute;n contienen funciones internas, que llamaremos&nbsp;<i>m&eacute;todos</i>:
+    <blockquote><code>
+        libro = {<blockquote>
+            &uacute;ltimaP&aacute;ginaLe&iacute;da = 84;<br/>
+            ...<br/>
+            leer = function () {<blockquote>
+                abrir(),<br/>
+                leer(&uacute;ltimaP&aacute;ginaLe&iacute;da + 1),<br/>
+                &uacute;ltimaP&aacute;ginaLe&iacute;da += 1;</blockquote>
+            },<br/>
+            remarcar = function (p&aacute;gina, primeraLetra, longitud) {<blockquote>
+                irA(p&aacute;ginaActual),<br/>
+                escribir(primeraLetra, longitud, { con = marcatextos });</blockquote>
+            }</blockquote>
+        }
+    </code></blockquote>
+    Cuando creamos un objeto, la m&aacute;quina va a apartar cierta cantidad de memoria; normalmente vamos a hacer esto de manera est&aacute;tica, con espacios seguidos para sus propiedades, aunque tambi&eacute;n podemos inicializar una lista vac&iacute;a que se va a ir llenando con direcciones a propiedades, o bien, dir.s de m&aacute;s listas de direcciones si se añaden o quitan propiedades despu&eacute;s de su inicializaci&oacute;n.
+</div>

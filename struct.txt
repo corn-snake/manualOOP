@@ -1,0 +1,9 @@
+prim.s, cols, objs
+objs { props, met.s
+construct.
+abtract. + encaps 
+inher. + ptr.patr.
+polimorf.
+get/set
+
+class vs obj

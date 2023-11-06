@@ -1,0 +1,54 @@
+<div id="class">
+    Digamos que queremos codificar una biblioteca. Podr&iacute;amos hacer, por ejemplo, diecisiete muebles, cada una conteniendo diez repisas, a las que le caben de ocho a doce libros, dependiendo del ancho. ¿Se volver&iacute;a muy tedioso, no?<br/>
+    Cuando queremos crear muchos objetos con las mismas propiedades, nos conviene escribirlo una sola vez, de manera que sea m&aacute;s f&aacute;cil de leer y modificar, individual- y grupal-mente. A esta estructura &quot;predeterminada&quot; le vamos a llamar&nbsp;<u><i>clase</i></u>.
+    <br/><br/>
+    La vamos a escribir igualita que un objeto, pero la declararemos con la palabra&nbsp;<code class="inlinecode">class</code>, y sin el operador de asignaci&oacute;n&nbsp;<code class="inlinecode" style="color:aqua">=</code>:
+    <blockquote><code>
+        class libro {<blockquote>
+            nombre,<br/>
+            p&aacute;ginas,<br/>
+            ...<br/>
+            autor&iacute;a
+        </blockquote>
+        }
+    </code></blockquote>
+    Que podremos despu&eacute;s usar como si fuera un nuevo tipo de variable, alocando espacio de manera est&aacute;tica o din&aacute;mica:
+    <blockquote><code>
+        libro miLibroEst&aacute;tico;<br/>
+        miLibroEst&aacute;tico<span style="color:aqua">.</span>nombre = "The Water Dancer"; ...
+        <br/><br/>
+        libro* miLibroDin&aacute;mico = new libro;<br/>
+        miLibroDin&aacute;mico<span style="color:aqua">-></span>nombre = "The Water Dancer"; ...
+    </code></blockquote>
+    La estrella/asterisco frente a nuestro nuevo tipo&nbsp;<code class="inlinecode">libro</code>&nbsp;est&aacute; all&iacute; debido a que este es el operador que convierte un tipo de variable en una&nbsp;<i>referencia a direcci&oacute;n del tipo de variable</i>, lo que llamamos &quot;puntero;&quot; esta clase de datos no nos concierne por el momento, ya que entra m&aacute;s en principios de C & C++ que de OOP en general.<br/>
+    Hablando de C/C++: cabe mencionar que el primero solo usa&nbsp;<code class="inlinecode">struct</code>s, no clases. Una struct es un objeto que declaramos una sola vez, aunque podemos copiarlo igual de f&aacute;cil que cualquier otra variable con la sintaxis&nbsp;<code class="inlinecode">struct copiaVar = varOriginal</code>.
+    <br/><br/>
+    Podemos invocar m&eacute;todos de una clase sin tener que usarla, aunque esto es m&aacute;s para prop&oacute;sitos de organizaci&oacute;n que por utilidad de la clase misma:<br/>
+    <blockquote><code>
+        class miClase {<blockquote>
+            valUno,
+            valDos,
+            ...
+            m&eacute;todoUno = funci&oacute;n (paramUno) {<blockquote>
+                Write(paramUno + &quot;se ley&oacute; en un m&eacute;todo de miClase&quot;);</blockquote>
+            }
+        </blockquote>
+        }<br/>
+        miClase.m&eacute;todoUno("Este texto");&nbsp;<span style="color:rgb(255, 0, 106)">// saldr&aacute; &quot;Este texto se ley&oacute; en un m&eacute;todo de miClase&quot;</span>
+    </code></blockquote>
+    Otra rareza de C++: en vez de usar&nbsp;<code class="inlinecode" style="color:aqua">.</code>&nbsp;para esta&nbsp;<i>invocaci&oacute;n gen&eacute;rica</i>, usar&aacute;&nbsp;<code class="inlinecode" style="color:aqua">::</code>.
+    <br/><br/>
+    Las clases pueden llevar objetos adentro, pero es importante declararlos en orden de aparici&oacute;n:
+    <blockquote><code>
+        class libro { ... }<br/>
+        class repisa {<blockquote>
+            ...<br/>
+            libro libros[10];&nbsp;<span style="color:rgb(255, 0, 106)">// inicializamos una lista para los libros que le pueden caber, digamos que 10</span>
+        </blockquote>}<br/>
+        class mueble {<blockquote>
+            ...<br/>
+            estante estantes[10];
+        </blockquote>
+        }
+    </code></blockquote>
+</div>

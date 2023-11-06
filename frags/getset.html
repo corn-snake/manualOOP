@@ -1,0 +1,42 @@
+<div id="getset">
+    Si apartamos memoria para un objeto de manera est&aacute;tica, podremos acceder a una propiedad de la siguiente manera:
+    <blockquote><code>
+        variableUno = miObjeto.propiedad;&nbsp;<span style="color:rgb(255, 0, 106)">// copiamos valor de la propiedad a una variable independiente</span><br/>
+        miObjeto<span style="color:aqua">.</span>propiedad = 15;&nbsp;<span style="color:rgb(255, 0, 106)">// cambiamos manualmente el valor de la propiedad</span><br/>
+        miObjeto<span style="color:aqua">.</span>m&eacute;todo(variableUno);&nbsp;<span style="color:rgb(255, 0, 106)">// llamamos al m&eacute;todo</span>
+    </code></blockquote>
+    En cambio, para la manera din&aacute;mica:
+    <blockquote><code>
+        variableUno = miObjeto<span style="color:aqua">-></span>propiedad;<br/>
+        miObjeto<span style="color:aqua">-></span>propiedad = 15;<br/>
+        miObjeto<span style="color:aqua">-></span>m&eacute;todo(variableUno);
+    </code></blockquote>
+    Claro, siempre habr&aacute; casos en los que tendremos que agregar o quitar propiedades de un objeto, por lo que siempre se almacena un espacio &quot;extra&quot; para almacenar una direcci&oacute;n a alguna segunda lista de propiedades si es que se requiere.<br/>
+    Habr&aacute; que mencionar que, como en todo, los diferentes lenguajes var&iacute;n: fuera de C++, la mayor&iacute;a s&oacute;lo usa la sintaxis con el operador&nbsp;<code class="inlinecode" style="color: aqua;">.</code>, por lo que esta distinci&oacute;n est&aacute;tico-din&aacute;mico es un tanto m&aacute;s t&eacute;cnica que pr&aacute;ctica.
+    <br/><br/>
+    Por convenci&oacute;n, se evita acceder a las propiedades de un objeto directamente: preferimos añadir m&eacute;todos que nos apoyen para ello. Aquellos que leen propiedades se les llamaran&nbsp;<i>getters</i>, y aquellos que las cambian son&nbsp;<i>setters</i>, tal que:
+    <blockquote><code>
+        miObjeto = {<blockquote>
+            propUno = 0,<br/>
+            propDos = 15,<br/>
+            propTres = 'veintiseis',<br/>
+            ...<br/>
+            getterUno = function () {
+                <blockquote>return propUno;</blockquote>
+            }<br/>
+            getterDos = function () {
+                <blockquote>return propDos;</blockquote>
+            }<br/>
+            ...<br/>
+            setterUno = function (valNuevo) {
+                <blockquote>if (typeof valNuevo == n&uacute;mero) {
+                    <blockquote>propUno = valNuevo;<br/>
+                    return propUno;</blockquote>
+                }<br/>
+                return ErrorDeTipo;</blockquote>
+            }<br/>
+            ...</blockquote>
+        }
+    </code></blockquote>
+    Esto se hace principalmente para tres cosas: para mantener ciertas partes del c&oacute;digo constantes y, por ende, predecibles, validaci&oacute;n, &nbsp;<i>encapsulación</i> y, a un nivel m&aacute;s alto,&nbsp;<i>polimorfismo</i>.
+</div>

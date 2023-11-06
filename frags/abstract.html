@@ -1,0 +1,11 @@
+<div id="abstract">
+    Cuando hablamos de&nbsp;<u>abstracci&oacute;n</u>&nbsp;en t&eacute;rminos de OOP, nos referimos a la pr&aacute;ctica de solo revelar al usuario (o bien, al resto del c&oacute;digo) lo que necesita saber de los mecanismos internos de un objeto, solo las partes &quot;de mayor nivel&quot;: si necesitamos hacer p&uacute;blica una funci&oacute;n de teatro, lo que haremos es dar la direcci&oacute;n, cuota, hora y si acaso el casting, en vez de revelar el costo del escenario, el cableado de la iluminaci&oacute;n, etc.
+    <br/>
+    En nuestro c&oacute;digo, generalmente vamos a poder usar tres &quot;tipos&quot; de propiedad y m&eacute;todo para lograr esto:&nbsp;<code class="inlinecode">private</code>,&nbsp;<code class="inlinecode">protected</code>&nbsp;y&nbsp;<code class="inlinecode">public</code>.
+    <br/><br/>
+    Aquellas propiedades y m&eacute;todos con el primer identificador s&oacute;lo pueden ser accesadas por otros m&eacute;todos y propiedades de su mismo objeto. Con el segundo, si y solo si el objeto de origen y el que intenta acceder a las propiedades del primero son de la misma&nbsp;<u>clase</u>&nbsp;o de&nbsp;<i>clases herederas</i>&nbsp;s&iacute; podr&aacute; haber comunicaci&oacute;n entre ambos. Finalmente, aquellas con el &uacute;ltimo identificador pueden ser accesados desde cualquier lugar sin problema.
+    <br/><br/>
+    Similarmente, cuando hablamos de&nbsp;<u>encapsulación</u>,&nbsp;estamos hablando de un concepto general y uno particular a la OOP.<br/>
+    Primeramente, la encapsulaci&oacute;n&nbsp;<i>sensu lato</i>&nbsp;se refiere a la separaci&oacute;n de partes del c&oacute;digo en funciones independientes, de manera que sea m&aacute;s legible y f&aacute;cil de separar de d&oacute;nde vienen los errores.<br/>
+    En contexto de la OOP, vamos a tomar un enfoque similar: todo lo que tenga que ver con los datos de los objetos ha de ir dentro del objeto mismo y, si se puede, generalizar la estructura de un tipo de objeto que vamos a crear m&uacute;ltiples veces dentro de una&nbsp;<i>clase</i>.
+</div>

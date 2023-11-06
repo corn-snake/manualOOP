@@ -1,0 +1,41 @@
+<div id="funcs">
+    Para los programas, no hay pasos a seguir o grandes estructuras, solo hay instrucciones y n&uacute;meros de instrucci&oacute;n en una larga tira cont&iacute;nua.<br/>
+    Para ef&eacute;ctos de l&oacute;gica, abstraemos ciertas estructuras en &quot;condicionales&quot; y &quot;ciclos&quot;, aunque en realidad consisten en dos pasos: una instrucci&oacute;n de comparaci&oacute;n de dos datos, y una instrucci&oacute;n de &quot;salto,&quot; que le indica a la m&aacute;quina que tiene que ir a cierta instrucci&oacute;n y resumir la ejecuci&oacute;n desde ah&iacute; si es que el estatus de la condici&oacute;n result&oacute; positivo.
+    <br/><br/>
+    Una funci&oacute;n es una parte del c&oacute;digo que no vamos a ejecutar en secuencia; es decir, lo escribimos y todo, pero en vez de usarlo immediatamente, lo vamos a guardar para despu&eacute;s.<br/>
+    El procesador lo que har&aacute; es que almacena el n&uacute;mero de la instrucci&oacute;n de la que vino dentro de un registro dedicado o, en su defecto, en una secci&oacute;n de la RAM, al que saltar&aacute; de regreso cuando la funci&oacute;n termine.<br/> Cuando hacemos el salto a una funci&oacute;n, diremos que la&nbsp;<i>llamamos</i>.
+    <br/><br/>
+    Una funci&oacute;n, adem&aacute;s de las variables que hay declaradas antes de haberla llamado, puede requerir variables temporales &uacute;nicas, a las que llamaremos&nbsp;<i>par&aacute;metros</i>; cuando llamemos una funci&oacute;acute, generalmente usaremos par&eacute;ntesis para indicar que queremos ejecutar el c&oacute;digo bajo ese nombre en vez de simplemente hacer una referencia al n&uacute;mero de la instrucci&oacute;n, de tal manera que podemos usar la siguiente sintaxis:
+    <blockquote><code>
+        function miFunci&oacute;n (param1, param2) {
+            <blockquote>return param1 + param2;</blockquote>
+        }<br/>
+        int numA = 4, numB = 70;<br/>
+        miFunci&oacute;n(numA, numB);
+    </code></blockquote>
+    Y esto se traduce a pseudo-Assembly como:
+    <blockquote><code>
+        section   miFunci&oacute;n:
+        <blockquote>pop   ebx <span style="color:rgb(255, 0, 106)">; quita lo de más arriba de la stack y lo mete en el registro ebx</span><br/>
+        pop   eax <span style="color:rgb(255, 0, 106)">; quita lo de más arriba de la stack y lo mete en el registro eax</span><br/>
+        sum   eax, ebx <span style="color:rgb(255, 0, 106)">; añade ebx a lo que ya lleva eax</span><br/>
+        ret 4</blockquote>
+        section   data:<br/>
+        <blockquote>numA   db   4<br/>
+            numB   db   70
+        </blockquote>
+        section   _main:
+        <blockquote>mov   eax, numB <span style="color:rgb(255, 0, 106)">; copia numB al registro eax</span><br/>
+            push eax <span style="color:rgb(255, 0, 106)">; copia el registro eax a mero arriba de la stack, la memoria</span><br/>
+            mov eax, numA<br/>
+            push eax<br/>
+            call   miFunci&oacute;n<br/><span style="color:rgb(255, 0, 106)">; eax acabar&aacute; con un valor de 74</span><br/>
+            fin
+        </blockquote>
+    </code></blockquote>
+    Lo que, a su vez, reemplazará variables con sus respectivas direcciones en memoria.<br/><br/>
+    Una funci&oacute;n puede expulsar un valor con la sintaxis <code class="inlinecode">return VALOR</code>; este se puede almacenar, pero solo si se hace immediatamente, tal que:
+    <blockquote><code>
+        variableFinal = miFunci&oacute;n(4, 70);&nbsp;<span style="color:rgb(255, 0, 106)">// causa que variableFinal valga 74</span>
+    </code></blockquote>
+</div>

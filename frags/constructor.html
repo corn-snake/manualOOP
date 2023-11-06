@@ -1,0 +1,29 @@
+<div id="constructor">
+    Cuando creamos un objeto de cierto tipo, a veces nos es &uacute;til hacer otras ciertas cosas con otras variables, o ir modificando las nuestras con que podemos saber al momento de su obtensi&oacute;n. Para esto, declaramos un constructor en nuestra clase:
+    <blockquote><code>
+        class libro {<blockquote>
+            props,<br/>
+            ...<br/>
+            m&eacute;todos,<br/>
+            ...<br/>
+            libro () {<blockquote>
+                this.ponerEn(buscarEstanteLibre());</blockquote>
+            }
+        </blockquote>
+        }
+    </code></blockquote>
+    Igualmente, para los lenguajes que ocupan manejo de memoria de cierto tipo, podemos declarar un&nbsp;<i>de</i>structor:
+    <blockquote><code>
+        class libro {<blockquote>
+            props,<br/>
+            ...<br/>
+            m&eacute;todos,<br/>
+            ...<br/>
+            libro () { ... }&nbsp;<span style="color:rgb(255, 0, 106)">// constructor</span><br/>
+            &Tilde; libro () { ... }&nbsp;<span style="color:rgb(255, 0, 106)">// destructor, que ser&aacute; llamado en cuanto usemos&nbsp;<b><i>delete libro X;</i></b></span>
+        </blockquote>
+        }
+    </code></blockquote>
+    Los lenguajes de&nbsp;<u>Nulo Manejo</u>&nbsp;no permiten esto, por lo que es importante saber cuando dejaremos de usar un objeto y llamar a una funci&oacute;n que nos sirva para lo mismo antes de que todo sea eliminado de memoria &mdash; o bien, mantenerlo en memoria a costo de espacio que podr&iacute;amos usar para otras cosas. De igual manera, estos lenguajes DEBEN usar la sintaxis&nbsp;<code class="inlinecode">clase miObj = new clase()</code>, o no se llamar&aacute; al constructor y tendremos un error.<br/>
+    Finalmente, JavaScript declara constructores con la sintaxis&nbsp;<code class="inlinecode">constructor () { ... }</code>, en vez de usar el nombre de la clase.
+</div>

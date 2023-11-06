@@ -1,0 +1,50 @@
+<div id="inheritance">
+    Podemos tambi&eacute;n derivar una clase especializada desde una general:
+    <blockquote><code>
+        class libro {<blockquote>
+            nombre,<br/>
+            props<br/>
+            ...<br/>
+            mets<br/>
+        </blockquote>
+        }<br/>
+        class libroAntiguo&nbsp;<code class="inlinecode" style="color:aqua">:</code>&nbsp;libro {<blockquote>
+            edad,<br/>
+            añadirEdad = function (age) {<blockquote>
+                edad = age;<br/>
+                return this;</blockquote>
+            }
+        </blockquote>
+        }&nbsp;<span style="color:rgb(255, 0, 106)">// los objetos de esta clase tendr&aacute;n nombre & edad</span><br/>
+    </code></blockquote>
+    JavaScript usa&nbsp;<code class="inlinecode">class nuevaClase&nbsp;<span style="color:aqua">extends</span>&nbsp;claseBase</code> en vez del operador&nbsp;<code class="inlinecode" style="color: aqua;">:</code>.<br/>Para efectos pr&aacute;cticos, esto es como copiar y añadirle a una clase, pero con un tanto m&aacute;s facilidad.
+    <br/><br/>
+    Adem&aacute;s, podemos crear objetos del nuevo tipo con el nombre de su &quot;clase progenitora&quot;, solo necesitamos llamar al nuevo constructor:
+    <blockquote><code>
+        libro libroDeMilSeiscientos = new libroAntiguo();<br/>
+        libro.añadirEdad(423);&nbsp;<span style="color:rgb(255, 0, 106)">// libroDeMilSeiscientos.edad, si configuramos el setter bien, va a ser igual a 423.</span>
+    </code></blockquote>
+    Se dice que la nueva clase &quot;hereda&quot; las propiedades de la anterior, o que la nueva clase es &quot;hija&quot; de la base.
+    <br/><br/>
+    Tambi&eacute;n podemos re-definir m&eacute;todos para nuestras nuevas clases, a lo que llamamos <u>polimorfismo</u>:
+    <blockquote><code>
+        clase libro {<blockquote>
+            ...<br/>
+            añadirNombre = function (nom) {<blockquote>
+                nombre = nom;<br/>
+                return this;
+            </blockquote>}
+        </blockquote>}<br/>
+        clase libroAntiguo {<blockquote>
+            ...<br/>
+            añadirNombre = function (nom) {<blockquote>
+                nombre = nom + &quot; &mdash; Antiguedad&quot;;<br/>
+                return this;</blockquote>
+            }
+        </blockquote>}<br/>
+        libro libroDeMilSeiscientos = new libroAntiguo();<br/>
+        Write(libroDeMilSeiscientos.añadirNombre(&quot;Las Mil y Una Noches, Edici&oacute;n Medieval&quot;).nombre);&nbsp;<span style="color:rgb(255, 0, 106)">// imprimir&aacute; &quot;Las Mil y Una Noches, Edici&oacute;n Medieval &mdash; Antiguedad&quot;</span>
+    </code></blockquote>
+    ---------------
+    Y con eso, acamabos la gu&iacute;a!!! Ya tienes a la mano todos los conceptos b&aacute;sicos que necesitas, ahora solo tienes que ponerlos en pr&aacute;ctica.
+</div>
